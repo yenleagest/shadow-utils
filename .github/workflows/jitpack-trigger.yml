@@ -1,0 +1,15 @@
+# .github/workflows/jitpack-prebuild.yml
+name: Trigger JitPack Build
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  jitpack-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger JitPack build
+        run: |
+          curl -s -X GET "https://jitpack.io/api/builds/github.com/${{ github.repository }}/tags/${GITHUB_REF_NAME}"
