@@ -43,3 +43,8 @@ import org.openqa.selenium.WebElement;
 
 WebElement element = driver.findElement(ShadowUtils.byShadowCss(By.id("id")));
 ```
+## ⛑️ Note:
+By default, a JAR file is built on JitPack when a new tag is created.
+If Maven can’t find the artifact when building your project, trigger the build manually:
+1. Visit https://jitpack.io/#yenleagest/shadow-utils
+2. Click the Get It button to start the build process
