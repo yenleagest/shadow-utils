@@ -12,4 +12,6 @@ jobs:
     steps:
       - name: Trigger JitPack build
         run: |
-          curl -s -X GET "https://jitpack.io/api/builds/github.com/${{ github.repository }}/tags/${GITHUB_REF_NAME}"
+          curl -s -X POST "https://jitpack.io/api/builds" \
+            -H "Content-Type: application/json" \
+            -d '{"repo":"github.com/${{ github.repository }}","tag":"${GITHUB_REF_NAME}"}'
